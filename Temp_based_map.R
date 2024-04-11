@@ -333,24 +333,8 @@ FinalMap<-ggplot()+
 
 FinalMap
 
-
-
 ggsave("Final_map_tidyterra.pdf", width=10, height=6)
 
-  
-
-
-
-
-
-###Working space###
-
-library(maptools)
-P4S <- CRS("+proj=longlat +datum=WGS84")
-aust_bound<-readShapeLines("data/borders/ausborder_polyline.shp", verbose=TRUE, proj4string=P4S)
-state_bound<-readShapeLines("data/borders/state_boundaries.shp", verbose=TRUE, proj4string=P4S)
-
-fun <- function() {
   plot(aust_bound, col="black", lwd=1.0,add=TRUE)  
   plot(state_bound, col="black", lwd=1.0,add=TRUE)
 }
